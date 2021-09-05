@@ -25,14 +25,14 @@
             <td style="width: 12%;">{{item.quantity}}</td>
             <td style="width: 12%;">{{item.total}}</td>
             <td>
-              <!--button (click)="removeItem(item)" class="btn btn-danger"><mat-icon>delete</mat-icon></button-->
+              <button (click)="removeItem(item)" class="btn btn-danger">delete</button>
             </td>
           </tr>
           <tr>
             <td colspan="4"></td>
-            <!--td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td-->
-            <td><button routerLink="/products" class="btn btn-primary">Shop More</button></td>
-            <td><button routerLink="/payment" class="btn btn-success">payment</button></td>
+            <td><button (click)="emptycart()" class="btn btn-warning" type="submit">Empty Cart</button></td>
+            <td><button routerLink="/products" class="btn btn-info" type="submit">Shop More</button></td>
+            <td><button routerLink="/payment" class="btn btn-light" type="submit">payment</button></td>
 
             <td><strong>Grand Total : ${{grandTotal}}</strong></td>
           </tr>
@@ -53,7 +53,7 @@
       <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
       <h4>Your cart is empty!</h4>
       <h6>Add item to it now</h6>
-      <button routerLink="/products" class="btn btn-primary">Shop Now</button>
+      <button routerLink="/products" class="btn btn-outline-success my-2 my-sm-0" type="submit">Shop Now</button>
     </div>
   </div>
 </ng-container>
