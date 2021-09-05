@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let item of products">
+      <div class="card col-md-2">
+        <img src="{{item.image}}" alt="">
+        <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+        <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+        <p><strong>Price:</strong> ${{item.price}}</p>
+        <button routerLink="/payment" class="btn btn-outline-success my-2 my-sm-0" type="submit">zur kasse</button><br/>
+        <button class="btn btn-outline-success my-2 my-sm-0"  (click)=addtoCart(item)>Add to cart</button>
+      </div>
+    </ng-container>
+
+  </div>
+</div>
