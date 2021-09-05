@@ -1,3 +1,4 @@
+<!-- html Datei für jedes einzelne Produkt-->
 <ng-container *ngIf="products.length !=0">
   <div class="container">
     <div class="card-table">
@@ -10,8 +11,6 @@
             <th>Product Image</th>
             <th>Description</th>
             <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
             <th>Action</th>
           </tr>
           </thead>
@@ -22,15 +21,13 @@
             <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
             <td style="width: 25%;">{{item.description}}</td>
             <th style="width: 12%;">{{item.price}}</th>
-            <td style="width: 12%;">{{item.quantity}}</td>
-            <td style="width: 12%;">{{item.total}}</td>
             <td>
               <button (click)="removeItem(item)" class="btn btn-danger">delete</button>
             </td>
           </tr>
           <tr>
-            <td colspan="4"></td>
-            <td><button (click)="emptycart()" class="btn btn-warning" type="submit">Empty Cart</button></td>
+            <td colspan="1"></td>
+            <td><button (click)="emptycart()" class="btn btn-warning" type="submit">Delete All</button></td>
             <td><button routerLink="/products" class="btn btn-info" type="submit">Shop More</button></td>
             <td><button routerLink="/payment" class="btn btn-light" type="submit">payment</button></td>
 
@@ -45,14 +42,14 @@
 
 
 <ng-container *ngIf="products.length ==0">
-  <div class="container">
+  <div class="container centers">
     <div class="card">
-      <h5 class="card-title">My Cart</h5>
+      <h5 class="card-title">Produkt</h5>
     </div>
-    <div class="center">
+    <div class="centers">
       <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
-      <h4>Your cart is empty!</h4>
-      <h6>Add item to it now</h6>
+      <h4>Es gib keinen Product in der warenkob</h4>
+      <h6>Add product in der Warenkob</h6>
       <button routerLink="/products" class="btn btn-outline-success my-2 my-sm-0" type="submit">Shop Now</button>
     </div>
   </div>

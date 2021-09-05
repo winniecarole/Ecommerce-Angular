@@ -13,32 +13,37 @@ export class CartsService {
   public cartItemList:any=[];
   public productList = new BehaviorSubject<any>([]);
 
-  setProduct(product : any){
-    this.cartItemList.push(...product);
-    this.productList.next(product);
-  }
 
+/**
+ * gitb der Preis alle Produkte  im Warenkob züruck
+  */
   getTotalPrice() : number{
     let grandTotal = 0;
     this.cartItemList.map((a:any)=>{
-      grandTotal += a.total;
+      grandTotal += a.price;
     })
     return grandTotal;
   }
 
-
+/**
+ *Liste alle Produkte im warenKorb
+ * */
   getProducts(){
     return this.productList.asObservable();
   }
 
-
+  /***
+   * legt ein Produkt im Warenkorb
+   * @param product
+   */
   addtoCart(product : any){
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
-    // this.getTotalPrice();
-    console.log(this.cartItemList)
-  }
 
+  }
+  /**
+   * löscht Ein Bestimmte Produkt in der Warenkob
+   * */
   removeCartItem(product: any){
     this.cartItemList.map((a:any, index:any)=>{
       if(product.id=== a.id){
@@ -47,6 +52,11 @@ export class CartsService {
     })
     this.productList.next(this.cartItemList);
   }
+
+  /**
+   * löscht alle Produkte in der Warenkob
+   * */
+
   removeAllCart(){
     this.cartItemList = []
     this.productList.next(this.cartItemList);

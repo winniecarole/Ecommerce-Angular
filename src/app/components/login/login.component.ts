@@ -9,6 +9,11 @@ import {count} from "rxjs/operators";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
+/**
+ * Typescript-Datei für User_login
+ * */
+
 export class LoginComponent implements OnInit {
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -21,14 +26,16 @@ export class LoginComponent implements OnInit {
   errorLoging:string= "prüft deine password oder deine Email"
   constructor(private router:Router) { }
 
-  navigateToLogin() {
-    this.router.navigateByUrl('/products');
-  }
+
 
   ngOnInit(): void {
   }
 
-
+/**
+ * Diese Methode nimmt die E-Mail und das Passwort des Benutzers und gibt ein leere string züruck
+ * wenn der Benutzer gefunden wurde. andernfalls gibt sie einen Text zurück,
+ * um anzuzeigen, dass der Benutzer nicht gefunden wurde
+ **/
    findUser(email:string,password:string): string{
     for(let i=0; i<user.length;i++){
       if(user[i].email===email && user[i].password===password){

@@ -24,7 +24,9 @@ export class ProductsComponent implements OnInit {
   }
 
 
-
+ /**
+  * legt ein Produkt in den warenkorb
+  * */
   addtoCart(item: any){
     this.cartService.addtoCart(item);
   }
